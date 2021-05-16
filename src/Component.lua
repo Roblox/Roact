@@ -2,6 +2,7 @@ local assign = require(script.Parent.assign)
 local ComponentLifecyclePhase = require(script.Parent.ComponentLifecyclePhase)
 local Type = require(script.Parent.Type)
 local Symbol = require(script.Parent.Symbol)
+local getActiveConnections = require(script.Parent.getActiveConnections)
 local invalidSetStateMessages = require(script.Parent.invalidSetStateMessages)
 local internalAssert = require(script.Parent.internalAssert)
 
@@ -366,6 +367,37 @@ function Component:__unmount()
 
 	for _, childNode in pairs(virtualNode.children) do
 		reconciler.unmountVirtualNode(childNode)
+	end
+
+	if config.experimentalActiveConnectionsWarning then
+		--[[
+			A full traversal of the component is performed to find all currently active connections
+			but some keys are excluded to reduce false positives.
+
+			If a connection is referenced in a component but it's closure does not close over
+			self as an upvalue then it is not a concern that the component still has a reference
+			after being unmounted. This commonly occurs through references to component context or the store.
+			Ideally we would be able to inspect the closure associated with each active connection
+			and warn only if the closure uses self as an upvalue.
+
+			Internal Roact connections are also ignored for this check, so that connections within EventManager
+			do not cause this warning to be emitted.
+		--]]
+		local ignoreKeys = {
+			InternalData,
+			"_context",
+			"store",
+		}
+
+		local activeConnections = getActiveConnections(self, ignoreKeys, self.__componentName)
+		for name, _ in pairs(activeConnections) do
+			warn("Roact experimental active connection warning:\n" ..
+				self.__componentName.. " did not clear connection " .. name .. "\n" ..
+				"Note: This warning is experimental and may reflect an issue with the implementation of your component\n" ..
+				"If the closure referenced closes self as an upvalue then this connection needs to be disconnected " ..
+				"so that this component will be garbage collected and this won't cause a memory leak."
+			)
+		end
 	end
 end
 

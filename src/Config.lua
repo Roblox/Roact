@@ -22,6 +22,9 @@ local defaultConfig = {
 	["elementTracing"] = false,
 	-- Enables validation of component props in stateful components.
 	["propValidation"] = false,
+
+	-- Enables an experimental warning which can help to track down connections not being disconnected
+	["experimentalActiveConnectionsWarning"] = false,
 }
 
 -- Build a list of valid configuration values up for debug messages.
