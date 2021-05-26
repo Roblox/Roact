@@ -451,20 +451,30 @@ end
 
 ### render
 ```
-render() -> Element | nil
+render(props, state) -> Element | nil
 ```
 
 `render` describes what a component should display at the current instant in time.
+
+You can access the props and state of the component either through `self.props` and `self.state` respectively or through the arguments passed.
+
+```lua
+function MyComponent:render(props, state)
+	return Roact.createElement("TextLabel", {
+		Text = "Hello, " .. props.name .. "!"
+	})
+end
+```
 
 !!! info
 	Roact assumes that `render` act likes a pure function: the result of `render` must depend only on `props` and `state`, and it must not have side-effects.
 
 ```lua
-function MyComponent:render()
+function MyComponent:render(props, state)
 	-- This is okay:
 	return Roact.createElement("TextLabel", {
-		Text = self.props.text,
-		Position = self.state.position
+		Text = props.text,
+		Position = state.position
 	})
 
 	-- Ack! Depending on values outside props/state is not allowed!

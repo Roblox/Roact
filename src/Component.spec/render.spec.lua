@@ -45,7 +45,7 @@ return function()
 
 		expect(renderSpy.callCount).to.equal(1)
 
-		local renderArguments = renderSpy:captureValues("self")
+		local renderArguments = renderSpy:captureValues("self", "props", "state")
 
 		expect(Type.of(renderArguments.self)).to.equal(Type.StatefulComponentInstance)
 		assertDeepEqual(capturedProps, {})
@@ -57,7 +57,10 @@ return function()
 
 		local capturedProps
 		local capturedState
-		local renderSpy = createSpy(function(self)
+		local renderSpy = createSpy(function(self, props, state)
+			expect(props).to.equal(self.props)
+			expect(state).to.equal(self.state)
+
 			capturedProps = self.props
 			capturedState = self.state
 		end)
@@ -74,7 +77,7 @@ return function()
 
 		expect(renderSpy.callCount).to.equal(1)
 
-		local firstRenderArguments = renderSpy:captureValues("self")
+		local firstRenderArguments = renderSpy:captureValues("self", "props", "state")
 		local firstProps = capturedProps
 		local firstState = capturedState
 
@@ -91,7 +94,7 @@ return function()
 
 		expect(renderSpy.callCount).to.equal(2)
 
-		local secondRenderArguments = renderSpy:captureValues("self")
+		local secondRenderArguments = renderSpy:captureValues("self", "props", "state")
 		local secondProps = capturedProps
 		local secondState = capturedState
 
@@ -127,7 +130,7 @@ return function()
 
 		expect(renderSpy.callCount).to.equal(1)
 
-		local firstRenderArguments = renderSpy:captureValues("self")
+		local firstRenderArguments = renderSpy:captureValues("self", "props", "state")
 		local firstProps = capturedProps
 		local firstState = capturedState
 
@@ -137,7 +140,7 @@ return function()
 
 		expect(renderSpy.callCount).to.equal(2)
 
-		local renderArguments = renderSpy:captureValues("self")
+		local renderArguments = renderSpy:captureValues("self", "props", "state")
 
 		expect(Type.of(renderArguments.self)).to.equal(Type.StatefulComponentInstance)
 		expect(capturedProps).to.equal(firstProps)

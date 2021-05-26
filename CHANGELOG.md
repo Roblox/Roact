@@ -1,6 +1,7 @@
 # Roact Changelog
 
 ## Unreleased Changes
+* `render` now passes the incoming props and state ([#199](https://github.com/Roblox/roact/issues/199))
 
 ## [1.4.0](https://github.com/Roblox/roact/releases/tag/v1.4.0) (November 19th, 2020)
 * Introduce forwardRef ([#307](https://github.com/Roblox/roact/pull/307)).
