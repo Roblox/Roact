@@ -162,7 +162,7 @@ function Form:init()
 end
 
 function Form:render()
-	return React.createElement(FancyTextBox, {
+	return Roact.createElement(FancyTextBox, {
 		onTextChange = function(value)
 			print("text value updated to:", value)
 		end
@@ -181,7 +181,7 @@ end
 In this instance, `FancyTextBox` simply doesn't do anything with the ref passed into it. However, we can easily update it using forwardRef:
 
 ```lua
-local FancyTextBox = React.forwardRef(function(props, ref)
+local FancyTextBox = Roact.forwardRef(function(props, ref)
 	return Roact.createElement("TextBox", {
 		Multiline = true,
 		PlaceholderText = "Enter your text here",
