@@ -1,0 +1,37 @@
+digraph G {
+	ranksep="0.4";
+	node [
+		shape="box",
+		style="rounded,filled",
+		color="#dddddd",
+		fontname="Segoe UI",
+		margin="0.2",
+	];
+	edge [
+	];
+
+	render1 [label="render"];
+	created [style="rounded", color="#000000", label=<<i>Instances Created</i>>];
+	mount [style="rounded", color="#000000", label=<
+		<b>Mounting</b>
+		<br /><br />
+		<font face="monospace">Roact.mount</font>
+	>];
+	mount -> init -> render1 -> created -> didMount;
+
+	updated [style="rounded", color="#000000", label=<<i>Instances Updated</i>>];
+	update [style="rounded", color="#000000", label=<
+		<b>Updating</b>
+		<br /><br />
+		<font face="monospace">Roact.update</font>
+	>];
+	update -> getDerivedStateFromProps -> shouldUpdate -> willUpdate -> render -> updated -> didUpdate;
+
+	unmounted [style="rounded", color="#000000", label=<<i>Instances Destroyed</i>>];
+	unmount [style="rounded", color="#000000", label=<
+		<b>Unmounting</b>
+		<br /><br />
+		<font face="monospace">Roact.unmount</font>
+	>];
+	unmount -> willUnmount -> unmounted;
+}

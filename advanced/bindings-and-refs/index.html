@@ -1,0 +1,903 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <link rel="canonical" href="https://roblox.github.io/roact/advanced/bindings-and-refs/">
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>Bindings and Refs - Roact Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab28b872.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#02a6f2">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+      
+        <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bindings" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://roblox.github.io/roact/" title="Roact Documentation" class="md-header-nav__button md-logo" aria-label="Roact Documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Roact Documentation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Bindings and Refs
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/Roblox/roact/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Roblox/roact
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://roblox.github.io/roact/" title="Roact Documentation" class="md-nav__button md-logo" aria-label="Roact Documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Roact Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/Roblox/roact/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Roblox/roact
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Guide
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Guide" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guide/installation/" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guide/hello-roact/" class="md-nav__link">
+      Hello, Roact!
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guide/elements/" class="md-nav__link">
+      Elements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guide/components/" class="md-nav__link">
+      Components
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guide/state-and-lifecycle/" class="md-nav__link">
+      State and Lifecycle
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guide/events/" class="md-nav__link">
+      Events
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Advanced Concepts
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Advanced Concepts" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Advanced Concepts
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../fragments/" class="md-nav__link">
+      Fragments
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../portals/" class="md-nav__link">
+      Portals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Bindings and Refs
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Bindings and Refs
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bindings" class="md-nav__link">
+    Bindings
+  </a>
+  
+    <nav class="md-nav" aria-label="Bindings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binding-properties" class="md-nav__link">
+    Binding Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapped-bindings" class="md-nav__link">
+    Mapped Bindings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#refs" class="md-nav__link">
+    Refs
+  </a>
+  
+    <nav class="md-nav" aria-label="Refs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#refs-in-action" class="md-nav__link">
+    Refs in Action
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refs-as-host-properties" class="md-nav__link">
+    Refs as Host Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ref-forwarding" class="md-nav__link">
+    Ref Forwarding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-refs" class="md-nav__link">
+    Function Refs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../context/" class="md-nav__link">
+      Context
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Performance Optimization
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Performance Optimization" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Performance Optimization
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../performance/overview/" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../performance/reduce-reconciliation/" class="md-nav__link">
+      Reduce Reconcilation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../api-reference/" class="md-nav__link">
+      API Reference
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bindings" class="md-nav__link">
+    Bindings
+  </a>
+  
+    <nav class="md-nav" aria-label="Bindings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binding-properties" class="md-nav__link">
+    Binding Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapped-bindings" class="md-nav__link">
+    Mapped Bindings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#refs" class="md-nav__link">
+    Refs
+  </a>
+  
+    <nav class="md-nav" aria-label="Refs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#refs-in-action" class="md-nav__link">
+    Refs in Action
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refs-as-host-properties" class="md-nav__link">
+    Refs as Host Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ref-forwarding" class="md-nav__link">
+    Ref Forwarding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-refs" class="md-nav__link">
+    Function Refs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Roblox/roact/edit/master/docs/advanced/bindings-and-refs.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Bindings and Refs</h1>
+                
+                <p>In certain situations, Roact's reconciliation process is ill-suited for managing some Instance properties. For cases like this, Roact provides escape hatches in the form of Bindings and Refs.</p>
+<p>Bindings and Refs are intended to be used in cases where Roact cannot solve a problem directly, or its solution might not be performant enough, like:</p>
+<ul>
+<li>Invoking functions on Roblox Instances</li>
+<li>Dynamically resizing a host component to fit its contents</li>
+<li>Gamepad selection</li>
+<li>Animations</li>
+</ul>
+<h2 id="bindings">Bindings<a class="headerlink" href="#bindings" title="Permanent link">&para;</a></h2>
+<p>Bindings are special objects that Roact automatically unwraps into values. When a binding is updated, Roact will change only the specific properties that are subscribed to it.</p>
+<h3 id="binding-properties">Binding Properties<a class="headerlink" href="#binding-properties" title="Permanent link">&para;</a></h3>
+<p>Bindings can be used to provide an external source for a prop value, or to update those values outside of the Roact reconciliation process.</p>
+<p>First, create a binding and an updater using <code>Roact.createBinding()</code> and put the results somewhere persistent. <code>createBinding</code> returns two results: a binding object and an updater function, which is used to update the binding's value.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">Foo</span> <span class="o">=</span> <span class="n">Roact</span><span class="p">.</span><span class="n">Component</span><span class="p">:</span><span class="n">extend</span><span class="p">(</span><span class="s2">&quot;Foo&quot;</span><span class="p">)</span>
+
+<span class="kr">function</span> <span class="nc">Foo</span><span class="p">:</span><span class="nf">init</span><span class="p">()</span>
+    <span class="c1">-- createBinding takes an initial value; for our purposes, 0 is fine</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">clickCount</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">updateClickCount</span> <span class="o">=</span> <span class="n">Roact</span><span class="p">.</span><span class="n">createBinding</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="kr">end</span>
+</code></pre></div>
+<p>Then, connect the binding value to something that we're rendering and the updater to something that will invoke it.</p>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nc">Foo</span><span class="p">:</span><span class="nf">render</span><span class="p">()</span>
+    <span class="kr">return</span> <span class="n">Roact</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;TextButton&quot;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="c1">-- Roact unwraps the binding, sets the Text property to the binding&#39;s value,</span>
+        <span class="c1">-- and subscribes to the binding</span>
+        <span class="n">Text</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">clickCount</span><span class="p">,</span>
+        <span class="p">[</span><span class="n">Roact</span><span class="p">.</span><span class="n">Event</span><span class="p">.</span><span class="n">Activated</span><span class="p">]</span> <span class="o">=</span> <span class="kr">function</span><span class="p">()</span>
+            <span class="c1">-- When the user clicks the button, the count will be incremented and</span>
+            <span class="c1">-- Roact will update any properties that are subscribed to the binding</span>
+            <span class="n">self</span><span class="p">.</span><span class="n">updateClickCount</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">clickCount</span><span class="p">:</span><span class="n">getValue</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="kr">end</span>
+    <span class="p">})</span>
+<span class="kr">end</span>
+</code></pre></div>
+<p>The result of this example is a <code>TextButton</code> that displays the number of times it's been clicked. In this case, we connect the updater to the button's <code>Activated</code> event. Other use cases could be connecting it to some external property in <code>didMount</code> or passing it to a child component as a callback.</p>
+<h3 id="mapped-bindings">Mapped Bindings<a class="headerlink" href="#mapped-bindings" title="Permanent link">&para;</a></h3>
+<p>Often, a binding's value isn't useful by itself. It needs to be transformed into some other value in order to be useful when assigned to an Instance property.</p>
+<p>Let's modify the above component to make use of a mapped binding:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nc">Foo</span><span class="p">:</span><span class="nf">render</span><span class="p">()</span>
+    <span class="kr">return</span> <span class="n">Roact</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;TextButton&quot;</span><span class="p">,</span> <span class="p">{</span>
+<span class="hll">        <span class="c1">-- Roact will receive the mapped value from the binding</span>
+</span><span class="hll">        <span class="n">Text</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">clickCount</span><span class="p">:</span><span class="n">map</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</span><span class="hll">            <span class="kr">return</span> <span class="s2">&quot;Clicks: &quot;</span> <span class="o">..</span> <span class="nb">tostring</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</span><span class="hll">        <span class="kr">end</span><span class="p">),</span>
+</span>        <span class="p">[</span><span class="n">Roact</span><span class="p">.</span><span class="n">Event</span><span class="p">.</span><span class="n">Activated</span><span class="p">]</span> <span class="o">=</span> <span class="kr">function</span><span class="p">()</span>
+            <span class="c1">-- When the user clicks the button, the count will be incremented</span>
+            <span class="n">self</span><span class="p">.</span><span class="n">updateClickCount</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">clickCount</span><span class="p">:</span><span class="n">getValue</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="kr">end</span>
+    <span class="p">})</span>
+<span class="kr">end</span>
+</code></pre></div>
+<p>Our mapped binding transforms the number of clicks into a string. Now the <code>TextButton</code> will display "Clicks: 0" instead of just the number!</p>
+<h2 id="refs">Refs<a class="headerlink" href="#refs" title="Permanent link">&para;</a></h2>
+<p>While bindings are most helpful for individual props, we often want to access an entire Roblox Instance and its methods.</p>
+<p><em>Refs</em> are a special type of binding that point to Roblox Instance objects that are created by Roact.</p>
+<p>Refs can only be attached to host components. This is different from React, where refs can be used to call members of composite components.</p>
+<h3 id="refs-in-action">Refs in Action<a class="headerlink" href="#refs-in-action" title="Permanent link">&para;</a></h3>
+<p>To use a ref, call <code>Roact.createRef()</code> and put the result somewhere persistent. Generally, that means that refs are only used inside stateful components.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">Foo</span> <span class="o">=</span> <span class="n">Roact</span><span class="p">.</span><span class="n">Component</span><span class="p">:</span><span class="n">extend</span><span class="p">(</span><span class="s2">&quot;Foo&quot;</span><span class="p">)</span>
+
+<span class="kr">function</span> <span class="nc">Foo</span><span class="p">:</span><span class="nf">init</span><span class="p">()</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">textBoxRef</span> <span class="o">=</span> <span class="n">Roact</span><span class="p">.</span><span class="n">createRef</span><span class="p">()</span>
+<span class="kr">end</span>
+</code></pre></div>
+<p>Next, use the ref inside of <code>render</code> by creating a host component. Refs use the special key <code>Roact.Ref</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nc">Foo</span><span class="p">:</span><span class="nf">render</span><span class="p">()</span>
+    <span class="kr">return</span> <span class="n">Roact</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;TextBox&quot;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="p">[</span><span class="n">Roact</span><span class="p">.</span><span class="n">Ref</span><span class="p">]</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">textBoxRef</span><span class="p">,</span>
+    <span class="p">})</span>
+<span class="kr">end</span>
+</code></pre></div>
+<p>Finally, we can use the value of the ref at any point after our component is mounted.</p>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nc">Foo</span><span class="p">:</span><span class="nf">didMount</span><span class="p">()</span>
+    <span class="c1">-- The actual Instance can be retrieved using the `getValue` method</span>
+    <span class="kd">local</span> <span class="n">textBox</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">textBoxRef</span><span class="p">:</span><span class="n">getValue</span><span class="p">()</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TextBox has this text:&quot;</span><span class="p">,</span> <span class="n">textBox</span><span class="p">.</span><span class="n">Text</span><span class="p">)</span>
+<span class="kr">end</span>
+</code></pre></div>
+<h3 id="refs-as-host-properties">Refs as Host Properties<a class="headerlink" href="#refs-as-host-properties" title="Permanent link">&para;</a></h3>
+<p>In addition to providing access to underlying Roblox objects, refs also provide a handy shortcut for Roblox Instance properties that expect another Instance as their value. One commonly-encountered example is <code>NextSelectionLeft</code> and its counterparts.</p>
+<p>Roact's Roblox renderer knows that bindings are not valid Roblox Instance values, so it will unwrap them for you:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">Bar</span> <span class="o">=</span> <span class="n">Roact</span><span class="p">.</span><span class="n">Component</span><span class="p">:</span><span class="n">extend</span><span class="p">(</span><span class="s2">&quot;Bar&quot;</span><span class="p">)</span>
+
+<span class="kr">function</span> <span class="nc">Bar</span><span class="p">:</span><span class="nf">init</span><span class="p">()</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">leftButtonRef</span> <span class="o">=</span> <span class="n">Roact</span><span class="p">.</span><span class="n">createRef</span><span class="p">()</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">rightButtonRef</span> <span class="o">=</span> <span class="n">Roact</span><span class="p">.</span><span class="n">createRef</span><span class="p">()</span>
+<span class="kr">end</span>
+
+<span class="kr">function</span> <span class="nc">Bar</span><span class="p">:</span><span class="nf">render</span><span class="p">()</span>
+    <span class="kr">return</span> <span class="n">Roact</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;Frame&quot;</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="p">{</span>
+        <span class="n">LeftButton</span> <span class="o">=</span> <span class="n">Roact</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;TextButton&quot;</span><span class="p">,</span> <span class="p">{</span>
+            <span class="p">[</span><span class="n">Roact</span><span class="p">.</span><span class="n">Ref</span><span class="p">]</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">leftButtonRef</span><span class="p">,</span>
+            <span class="n">NextSelectionRight</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">rightButtonRef</span><span class="p">,</span>
+        <span class="p">}),</span>
+        <span class="n">RightButton</span> <span class="o">=</span> <span class="n">Roact</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;TextButton&quot;</span><span class="p">,</span> <span class="p">{</span>
+            <span class="p">[</span><span class="n">Roact</span><span class="p">.</span><span class="n">Ref</span><span class="p">]</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">rightButtonRef</span><span class="p">,</span>
+            <span class="n">NextSelectionLeft</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">leftButtonRef</span><span class="p">,</span>
+        <span class="p">})</span>
+    <span class="p">})</span>
+<span class="kr">end</span>
+</code></pre></div>
+<p>Since refs use bindings under the hood, they will be automatically updated whenever the ref changes. This means there's no need to worry about the order in which refs are assigned relative to when properties that use them get set.</p>
+<h3 id="ref-forwarding">Ref Forwarding<a class="headerlink" href="#ref-forwarding" title="Permanent link">&para;</a></h3>
+<p>In Roact 1.x, refs can only be applied to host components, <em>not</em> stateful or function components. However, stateful or function components may accept a ref in order to pass it along to an underlying host component. In order to implement this, we wrap the given component with <code>Roact.forwardRef</code>.</p>
+<p>Suppose we have a styled TextBox component that still needs to accept a ref, so that users of the component can trigger functionality like <code>TextBox:CaptureFocus()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="kr">function</span> <span class="nf">FancyTextBox</span><span class="p">(</span><span class="n">props</span><span class="p">)</span>
+    <span class="kr">return</span> <span class="n">Roact</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;TextBox&quot;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="n">Multiline</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="n">PlaceholderText</span> <span class="o">=</span> <span class="s2">&quot;Enter your text here&quot;</span><span class="p">,</span>
+        <span class="n">PlaceholderColor3</span> <span class="o">=</span> <span class="n">Color3</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">),</span>
+        <span class="p">[</span><span class="n">Roact</span><span class="p">.</span><span class="n">Change</span><span class="p">.</span><span class="n">Text</span><span class="p">]</span> <span class="o">=</span> <span class="n">props</span><span class="p">.</span><span class="n">onTextChange</span><span class="p">,</span>
+    <span class="p">})</span>
+<span class="kr">end</span>
+</code></pre></div>
+<p>If we were to create an element using the above component, we'd be unable to get a ref to point to the underlying "TextBox" Instance:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">Form</span> <span class="o">=</span> <span class="n">Roact</span><span class="p">.</span><span class="n">Component</span><span class="p">:</span><span class="n">extend</span><span class="p">(</span><span class="s2">&quot;Form&quot;</span><span class="p">)</span>
+<span class="kr">function</span> <span class="nc">Form</span><span class="p">:</span><span class="nf">init</span><span class="p">()</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">textBoxRef</span> <span class="o">=</span> <span class="n">Roact</span><span class="p">.</span><span class="n">createRef</span><span class="p">()</span>
+<span class="kr">end</span>
+
+<span class="kr">function</span> <span class="nc">Form</span><span class="p">:</span><span class="nf">render</span><span class="p">()</span>
+    <span class="kr">return</span> <span class="n">React</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="n">FancyTextBox</span><span class="p">,</span> <span class="p">{</span>
+        <span class="n">onTextChange</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;text value updated to:&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+        <span class="kr">end</span>
+        <span class="c1">-- This doesn&#39;t actually get assigned to the underlying TextBox!</span>
+        <span class="p">[</span><span class="n">Roact</span><span class="p">.</span><span class="n">Ref</span><span class="p">]</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">textBoxRef</span><span class="p">,</span>
+    <span class="p">})</span>
+<span class="kr">end</span>
+
+<span class="kr">function</span> <span class="nc">Form</span><span class="p">:</span><span class="nf">didMount</span><span class="p">()</span>
+    <span class="c1">-- Since self.textBoxRef never gets assigned to a host component, this</span>
+    <span class="c1">-- doesn&#39;t work, and in fact will be an attempt to access a nil reference!</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">textBoxRef</span><span class="p">.</span><span class="n">current</span><span class="p">:</span><span class="n">CaptureFocus</span><span class="p">()</span>
+<span class="kr">end</span>
+</code></pre></div>
+<p>In this instance, <code>FancyTextBox</code> simply doesn't do anything with the ref passed into it. However, we can easily update it using forwardRef:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">FancyTextBox</span> <span class="o">=</span> <span class="n">React</span><span class="p">.</span><span class="n">forwardRef</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="n">props</span><span class="p">,</span> <span class="n">ref</span><span class="p">)</span>
+    <span class="kr">return</span> <span class="n">Roact</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;TextBox&quot;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="n">Multiline</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="n">PlaceholderText</span> <span class="o">=</span> <span class="s2">&quot;Enter your text here&quot;</span><span class="p">,</span>
+        <span class="n">PlaceholderColor3</span> <span class="o">=</span> <span class="n">Color3</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">),</span>
+        <span class="p">[</span><span class="n">Roact</span><span class="p">.</span><span class="n">Change</span><span class="p">.</span><span class="n">Text</span><span class="p">]</span> <span class="o">=</span> <span class="n">props</span><span class="p">.</span><span class="n">onTextChange</span><span class="p">,</span>
+        <span class="p">[</span><span class="n">Roact</span><span class="p">.</span><span class="n">Ref</span><span class="p">]</span> <span class="o">=</span> <span class="n">ref</span><span class="p">,</span>
+    <span class="p">})</span>
+<span class="kr">end</span><span class="p">)</span>
+</code></pre></div>
+<p>With the above change, <code>FancyTextBox</code> now accepts a ref and assigns it to the "TextBox" host component that it renders under the hood. Our <code>Form</code> implementation will successfully capture focus on <code>didMount</code>.</p>
+<h3 id="function-refs">Function Refs<a class="headerlink" href="#function-refs" title="Permanent link">&para;</a></h3>
+<p>The original ref API was based on functions instead of objects (and does not use bindings). Its use is not recommended for most cases anymore.</p>
+<p>This style of ref involves passing a function as the <code>Roact.Ref</code> prop as opposed to a dedicated ref object:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="kr">function</span> <span class="nf">Baz</span><span class="p">(</span><span class="n">props</span><span class="p">)</span>
+    <span class="kr">return</span> <span class="n">Roact</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;TextBox&quot;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="p">[</span><span class="n">Roact</span><span class="p">.</span><span class="n">Ref</span><span class="p">]</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span>
+            <span class="c1">-- Be careful to guard against nil refs; this is a gotcha of</span>
+            <span class="c1">-- function refs.</span>
+            <span class="kr">if</span> <span class="n">instance</span> <span class="o">~=</span> <span class="kc">nil</span> <span class="kr">then</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TextBox has this text:&quot;</span><span class="p">,</span> <span class="n">instance</span><span class="p">.</span><span class="n">Text</span><span class="p">)</span>
+            <span class="kr">else</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TextBox ref removed.&quot;</span><span class="p">)</span>
+            <span class="kr">end</span>
+        <span class="kr">end</span><span class="p">,</span>
+    <span class="p">})</span>
+<span class="kr">end</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Function refs, unlike bindings, <em>cannot</em> be used as properties for host components. This will result in an error. </p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When a function ref is called, it's not guaranteed that its sibling or parent components have finished mounting. Causing side effects here can cause difficult-to-trace bugs.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When a component with a function ref unmounts, or when the ref value changes, the component's ref is passed <code>nil</code>.</p>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../portals/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Portals
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../context/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Context
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

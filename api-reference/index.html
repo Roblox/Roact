@@ -1,0 +1,1796 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <link rel="canonical" href="https://roblox.github.io/roact/api-reference/">
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>API Reference - Roact Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab28b872.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#02a6f2">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+      
+        <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#methods" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://roblox.github.io/roact/" title="Roact Documentation" class="md-header-nav__button md-logo" aria-label="Roact Documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Roact Documentation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              API Reference
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/Roblox/roact/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Roblox/roact
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://roblox.github.io/roact/" title="Roact Documentation" class="md-nav__button md-logo" aria-label="Roact Documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Roact Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/Roblox/roact/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Roblox/roact
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Guide
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Guide" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../guide/installation/" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../guide/hello-roact/" class="md-nav__link">
+      Hello, Roact!
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../guide/elements/" class="md-nav__link">
+      Elements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../guide/components/" class="md-nav__link">
+      Components
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../guide/state-and-lifecycle/" class="md-nav__link">
+      State and Lifecycle
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../guide/events/" class="md-nav__link">
+      Events
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Advanced Concepts
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Advanced Concepts" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Advanced Concepts
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../advanced/fragments/" class="md-nav__link">
+      Fragments
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../advanced/portals/" class="md-nav__link">
+      Portals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../advanced/bindings-and-refs/" class="md-nav__link">
+      Bindings and Refs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../advanced/context/" class="md-nav__link">
+      Context
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Performance Optimization
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Performance Optimization" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Performance Optimization
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../performance/overview/" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../performance/reduce-reconciliation/" class="md-nav__link">
+      Reduce Reconcilation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        API Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      API Reference
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roactcreateelement" class="md-nav__link">
+    Roact.createElement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactcreatefragment" class="md-nav__link">
+    Roact.createFragment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactmount" class="md-nav__link">
+    Roact.mount
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactupdate" class="md-nav__link">
+    Roact.update
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactunmount" class="md-nav__link">
+    Roact.unmount
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactonechild" class="md-nav__link">
+    Roact.oneChild
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactcreatebinding" class="md-nav__link">
+    Roact.createBinding
+  </a>
+  
+    <nav class="md-nav" aria-label="Roact.createBinding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getvalue" class="md-nav__link">
+    getValue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    map
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactjoinbindings" class="md-nav__link">
+    Roact.joinBindings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactcreateref" class="md-nav__link">
+    Roact.createRef
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactforwardref" class="md-nav__link">
+    Roact.forwardRef
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactcreatecontext" class="md-nav__link">
+    Roact.createContext
+  </a>
+  
+    <nav class="md-nav" aria-label="Roact.createContext">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#provider" class="md-nav__link">
+    Provider
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consumer" class="md-nav__link">
+    Consumer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactsetglobalconfig" class="md-nav__link">
+    Roact.setGlobalConfig
+  </a>
+  
+    <nav class="md-nav" aria-label="Roact.setGlobalConfig">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#typechecks" class="md-nav__link">
+    typeChecks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#internaltypechecks" class="md-nav__link">
+    internalTypeChecks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elementtracing" class="md-nav__link">
+    elementTracing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#propvalidation" class="md-nav__link">
+    propValidation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constants" class="md-nav__link">
+    Constants
+  </a>
+  
+    <nav class="md-nav" aria-label="Constants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roactchildren" class="md-nav__link">
+    Roact.Children
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactref" class="md-nav__link">
+    Roact.Ref
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactevent" class="md-nav__link">
+    Roact.Event
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactchange" class="md-nav__link">
+    Roact.Change
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactnone" class="md-nav__link">
+    Roact.None
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-types" class="md-nav__link">
+    Component Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Component Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roactcomponent" class="md-nav__link">
+    Roact.Component
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactpurecomponent" class="md-nav__link">
+    Roact.PureComponent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactportal" class="md-nav__link">
+    Roact.Portal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-api" class="md-nav__link">
+    Component API
+  </a>
+  
+    <nav class="md-nav" aria-label="Component API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defaultprops" class="md-nav__link">
+    defaultProps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init" class="md-nav__link">
+    init
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#render" class="md-nav__link">
+    render
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setstate" class="md-nav__link">
+    setState
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shouldupdate" class="md-nav__link">
+    shouldUpdate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validateprops" class="md-nav__link">
+    validateProps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getelementtraceback" class="md-nav__link">
+    getElementTraceback
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lifecycle-methods" class="md-nav__link">
+    Lifecycle Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Lifecycle Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#didmount" class="md-nav__link">
+    didMount
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#willunmount" class="md-nav__link">
+    willUnmount
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#willupdate" class="md-nav__link">
+    willUpdate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#didupdate" class="md-nav__link">
+    didUpdate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getderivedstatefromprops" class="md-nav__link">
+    getDerivedStateFromProps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roactcreateelement" class="md-nav__link">
+    Roact.createElement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactcreatefragment" class="md-nav__link">
+    Roact.createFragment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactmount" class="md-nav__link">
+    Roact.mount
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactupdate" class="md-nav__link">
+    Roact.update
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactunmount" class="md-nav__link">
+    Roact.unmount
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactonechild" class="md-nav__link">
+    Roact.oneChild
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactcreatebinding" class="md-nav__link">
+    Roact.createBinding
+  </a>
+  
+    <nav class="md-nav" aria-label="Roact.createBinding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getvalue" class="md-nav__link">
+    getValue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    map
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactjoinbindings" class="md-nav__link">
+    Roact.joinBindings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactcreateref" class="md-nav__link">
+    Roact.createRef
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactforwardref" class="md-nav__link">
+    Roact.forwardRef
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactcreatecontext" class="md-nav__link">
+    Roact.createContext
+  </a>
+  
+    <nav class="md-nav" aria-label="Roact.createContext">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#provider" class="md-nav__link">
+    Provider
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consumer" class="md-nav__link">
+    Consumer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactsetglobalconfig" class="md-nav__link">
+    Roact.setGlobalConfig
+  </a>
+  
+    <nav class="md-nav" aria-label="Roact.setGlobalConfig">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#typechecks" class="md-nav__link">
+    typeChecks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#internaltypechecks" class="md-nav__link">
+    internalTypeChecks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elementtracing" class="md-nav__link">
+    elementTracing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#propvalidation" class="md-nav__link">
+    propValidation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constants" class="md-nav__link">
+    Constants
+  </a>
+  
+    <nav class="md-nav" aria-label="Constants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roactchildren" class="md-nav__link">
+    Roact.Children
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactref" class="md-nav__link">
+    Roact.Ref
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactevent" class="md-nav__link">
+    Roact.Event
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactchange" class="md-nav__link">
+    Roact.Change
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactnone" class="md-nav__link">
+    Roact.None
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-types" class="md-nav__link">
+    Component Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Component Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roactcomponent" class="md-nav__link">
+    Roact.Component
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactpurecomponent" class="md-nav__link">
+    Roact.PureComponent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roactportal" class="md-nav__link">
+    Roact.Portal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-api" class="md-nav__link">
+    Component API
+  </a>
+  
+    <nav class="md-nav" aria-label="Component API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defaultprops" class="md-nav__link">
+    defaultProps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init" class="md-nav__link">
+    init
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#render" class="md-nav__link">
+    render
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setstate" class="md-nav__link">
+    setState
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shouldupdate" class="md-nav__link">
+    shouldUpdate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validateprops" class="md-nav__link">
+    validateProps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getelementtraceback" class="md-nav__link">
+    getElementTraceback
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lifecycle-methods" class="md-nav__link">
+    Lifecycle Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Lifecycle Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#didmount" class="md-nav__link">
+    didMount
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#willunmount" class="md-nav__link">
+    willUnmount
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#willupdate" class="md-nav__link">
+    willUpdate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#didupdate" class="md-nav__link">
+    didUpdate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getderivedstatefromprops" class="md-nav__link">
+    getDerivedStateFromProps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Roblox/roact/edit/master/docs/api-reference.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>API Reference</h1>
+                
+                <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<h3 id="roactcreateelement">Roact.createElement<a class="headerlink" href="#roactcreateelement" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Roact.createElement(component, [props, [children]]) -&gt; RoactElement
+</code></pre></div>
+<p>Creates a new Roact element representing the given <code>component</code>. Elements are lightweight descriptions about what a Roblox Instance should look like, like a blueprint!</p>
+<p>The <code>children</code> argument is shorthand for adding a <code>Roact.Children</code> key to <code>props</code>. It should be specified as a dictionary of names to elements.</p>
+<p><code>component</code> can be a string, a function, or a table created by <code>Component:extend</code>.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Make sure not to modify <code>props</code> or <code>children</code> after they're passed into <code>createElement</code>!</p>
+</div>
+<hr />
+<h3 id="roactcreatefragment">Roact.createFragment<a class="headerlink" href="#roactcreatefragment" title="Permanent link">&para;</a></h3>
+<div class="admonition success">
+<p class="admonition-title">Added in Roact 1.0.0</p>
+</div>
+<div class="highlight"><pre><span></span><code>Roact.createFragment(elements) -&gt; RoactFragment
+</code></pre></div>
+<p>Creates a new Roact fragment with the provided table of elements. Fragments allow grouping of elements without the need for intermediate containing objects like <code>Frame</code>s.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Make sure not to modify <code>elements</code> after they're passed into <code>createFragment</code>!</p>
+</div>
+<hr />
+<h3 id="roactmount">Roact.mount<a class="headerlink" href="#roactmount" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Roact.mount(element, [parent, [key]]) -&gt; RoactTree
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><code>Roact.mount</code> is also available via the deprecated alias <code>Roact.reify</code>. It will be removed in a future release.</p>
+</div>
+<p>Creates a Roblox Instance given a Roact element, and optionally a <code>parent</code> to put it in, and a <code>key</code> to use as the instance's <code>Name</code>.</p>
+<p>The result is a <code>RoactTree</code>, which is an opaque handle that represents a tree of components owned by Roact. You can pass this to APIs like <code>Roact.unmount</code>. It'll also be used for future debugging APIs.</p>
+<hr />
+<h3 id="roactupdate">Roact.update<a class="headerlink" href="#roactupdate" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Roact.update(tree, element) -&gt; RoactTree
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><code>Roact.update</code> is also available via the deprecated alias <code>Roact.reconcile</code>. It will be removed in a future release.</p>
+</div>
+<p>Updates an existing instance handle with a new element, returning a new handle. This can be used to update a UI created with <code>Roact.mount</code> by passing in a new element with new props.</p>
+<p><code>update</code> can be used to change the props of a component instance created with <code>mount</code> and is useful for putting Roact content into non-Roact applications.</p>
+<p>As of Roact 1.0, the returned <code>RoactTree</code> object will always be the same value as the one passed in.</p>
+<hr />
+<h3 id="roactunmount">Roact.unmount<a class="headerlink" href="#roactunmount" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Roact.unmount(tree) -&gt; void
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><code>Roact.unmount</code> is also available via the deprecated alias <code>Roact.teardown</code>. It will be removed in a future release.</p>
+</div>
+<p>Destroys the given <code>RoactTree</code> and all of its descendants. Does not operate on a Roblox Instance -- this must be given a handle that was returned by <code>Roact.mount</code>.</p>
+<hr />
+<h3 id="roactonechild">Roact.oneChild<a class="headerlink" href="#roactonechild" title="Permanent link">&para;</a></h3>
+<p><code>Roact.oneChild(children) -&gt; RoactElement | nil</code></p>
+<p>Given a dictionary of children, returns a single child element.</p>
+<p>If <code>children</code> contains more than one child, <code>oneChild</code> function will throw an error. This is intended to denote an error when using the component using <code>oneChild</code>.</p>
+<p>If <code>children</code> is <code>nil</code> or contains no children, <code>oneChild</code> will return <code>nil</code>.</p>
+<hr />
+<h3 id="roactcreatebinding">Roact.createBinding<a class="headerlink" href="#roactcreatebinding" title="Permanent link">&para;</a></h3>
+<div class="admonition success">
+<p class="admonition-title">Added in Roact 1.0.0</p>
+</div>
+<div class="highlight"><pre><span></span><code>Roact.createBinding(initialValue) -&gt; Binding, updateFunction
+where
+    updateFunction: (newValue) -&gt; ()
+</code></pre></div>
+<p>The first value returned is a <code>Binding</code> object, which will typically be passed as a prop to a Roact host component. The second is a function that can be called with a new value to update the binding.</p>
+<p>A <code>Binding</code> has the following API:</p>
+<h4 id="getvalue">getValue<a class="headerlink" href="#getvalue" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>Binding:getValue() -&gt; value
+</code></pre></div>
+<p>Returns the internal value of the binding. This is helpful when updating a binding relative to its current value.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Using <code>getValue</code> inside a component's <code>render</code> method is dangerous! Using the unwrapped value directly won't allow Roact to subscribe to a binding's updates. To guarantee that a bound value will update, use the binding itself for your prop value.</p>
+</div>
+<h4 id="map">map<a class="headerlink" href="#map" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>Binding:map(mappingFunction) -&gt; Binding
+where
+    mappingFunction: (value) -&gt; mappedValue
+</code></pre></div>
+<p>Returns a new binding that maps the existing binding's value to something else. For example, <code>map</code> can be used to transform an animation progress value like <code>0.4</code> into a property that can be consumed by a Roblox Instance like <code>UDim2.new(0.4, 0, 1, 0)</code>.</p>
+<hr />
+<h3 id="roactjoinbindings">Roact.joinBindings<a class="headerlink" href="#roactjoinbindings" title="Permanent link">&para;</a></h3>
+<div class="admonition success">
+<p class="admonition-title">Added in Roact 1.1.0</p>
+</div>
+<div class="highlight"><pre><span></span><code>Roact.joinBindings(bindings) -&gt; Binding
+where
+    bindings: { [any]: Binding }
+</code></pre></div>
+<p>Combines multiple bindings into a single binding. The new binding's value will have the same keys as the input table of bindings.</p>
+<p><code>joinBindings</code> is usually used alongside <code>Binding:map</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="kr">function</span> <span class="nf">Flex</span><span class="p">()</span>
+    <span class="kd">local</span> <span class="n">aSize</span><span class="p">,</span> <span class="n">setASize</span> <span class="o">=</span> <span class="n">Roact</span><span class="p">.</span><span class="n">createBinding</span><span class="p">(</span><span class="n">Vector2</span><span class="p">.</span><span class="n">new</span><span class="p">())</span>
+    <span class="kd">local</span> <span class="n">bSize</span><span class="p">,</span> <span class="n">setBSize</span> <span class="o">=</span> <span class="n">Roact</span><span class="p">.</span><span class="n">createBinding</span><span class="p">(</span><span class="n">Vector2</span><span class="p">.</span><span class="n">new</span><span class="p">())</span>
+
+    <span class="kr">return</span> <span class="n">Roact</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;Frame&quot;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="n">Size</span> <span class="o">=</span> <span class="n">Roact</span><span class="p">.</span><span class="n">joinBindings</span><span class="p">({</span><span class="n">aSize</span><span class="p">,</span> <span class="n">bSize</span><span class="p">}):</span><span class="n">map</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="n">sizes</span><span class="p">)</span>
+            <span class="kd">local</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">Vector2</span><span class="p">.</span><span class="n">new</span><span class="p">()</span>
+
+            <span class="kr">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">size</span> <span class="kr">in</span> <span class="nb">ipairs</span><span class="p">(</span><span class="n">sizes</span><span class="p">)</span> <span class="kr">do</span>
+                <span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">size</span>
+            <span class="kr">end</span>
+
+            <span class="kr">return</span> <span class="n">UDim2</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">sum</span><span class="p">.</span><span class="n">X</span><span class="p">,</span>  <span class="mi">0</span><span class="p">,</span> <span class="n">sum</span><span class="p">.</span><span class="n">Y</span><span class="p">)</span>
+        <span class="kr">end</span><span class="p">),</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="n">Roact</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;Frame&quot;</span><span class="p">,</span> <span class="p">{</span>
+            <span class="n">Size</span> <span class="o">=</span> <span class="n">UDim2</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
+            <span class="p">[</span><span class="n">Roact</span><span class="p">.</span><span class="n">Change</span><span class="p">.</span><span class="n">AbsoluteSize</span><span class="p">]</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span>
+                <span class="n">setASize</span><span class="p">(</span><span class="n">instance</span><span class="p">.</span><span class="n">Size</span><span class="p">)</span>
+            <span class="kr">end</span><span class="p">,</span>
+        <span class="p">}),</span>
+        <span class="n">B</span> <span class="o">=</span> <span class="n">Roact</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;Frame&quot;</span><span class="p">,</span> <span class="p">{</span>
+            <span class="n">Size</span> <span class="o">=</span> <span class="n">UDim2</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
+            <span class="n">Position</span> <span class="o">=</span> <span class="n">aSize</span><span class="p">:</span><span class="n">map</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+                <span class="kr">return</span> <span class="n">UDim2</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">size</span><span class="p">.</span><span class="n">Y</span><span class="p">)</span>
+            <span class="kr">end</span><span class="p">),</span>
+            <span class="p">[</span><span class="n">Roact</span><span class="p">.</span><span class="n">Change</span><span class="p">.</span><span class="n">AbsoluteSize</span><span class="p">]</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span>
+                <span class="n">setBSize</span><span class="p">(</span><span class="n">instance</span><span class="p">.</span><span class="n">Size</span><span class="p">)</span>
+            <span class="kr">end</span><span class="p">,</span>
+        <span class="p">}),</span>
+    <span class="p">})</span>
+<span class="kr">end</span>
+</code></pre></div>
+<hr />
+<h3 id="roactcreateref">Roact.createRef<a class="headerlink" href="#roactcreateref" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Roact.createRef() -&gt; Ref
+</code></pre></div>
+<p>Creates a new reference object that can be used with <a href="#roactref">Roact.Ref</a>.</p>
+<hr />
+<h3 id="roactforwardref">Roact.forwardRef<a class="headerlink" href="#roactforwardref" title="Permanent link">&para;</a></h3>
+<div class="admonition success">
+<p class="admonition-title">Added in Roact 1.4.0</p>
+</div>
+<div class="highlight"><pre><span></span><code>Roact.forwardRef(render: (props: table, ref: Ref) -&gt; RoactElement) -&gt; RoactComponent
+</code></pre></div>
+<p>Creates a new component given a render function that accepts both props and a ref, allowing a ref to be forwarded to an underlying host component via <a href="#roactref">Roact.Ref</a>.</p>
+<hr />
+<h3 id="roactcreatecontext">Roact.createContext<a class="headerlink" href="#roactcreatecontext" title="Permanent link">&para;</a></h3>
+<div class="admonition success">
+<p class="admonition-title">Added in Roact 1.3.0</p>
+</div>
+<div class="highlight"><pre><span></span><code>Roact.createContext(defaultValue: any) -&gt; RoactContext
+
+type RoactContext = {
+    Provider: Component,
+    Consumer: Component,
+    [private fields]
+}
+</code></pre></div>
+<p>Creates a new context provider and consumer. For a usage guide, see <a href="../advanced/context">Advanced Concepts: Context</a>.</p>
+<p><code>defaultValue</code> is given to consumers if they have no <code>Provider</code> ancestors. It is up to users of Roact's context API to turn this case into an error if it is an invalid state.</p>
+<p><code>Provider</code> and <code>Consumer</code> are both Roact components.</p>
+<h4 id="provider"><code>Provider</code><a class="headerlink" href="#provider" title="Permanent link">&para;</a></h4>
+<p><code>Provider</code> accepts the following props:</p>
+<ul>
+<li><code>value</code>: The value to put into the tree for this context value.<ul>
+<li>If the <code>Provider</code> is updated with a new <code>value</code>, any matching <code>Consumer</code> components will be re-rendered with the new value.</li>
+</ul>
+</li>
+<li><code>[Children]</code>: Any number of children to render underneath this provider.<ul>
+<li>Descendants of this component can receive the provided context value by using <code>Consumer</code>.</li>
+</ul>
+</li>
+</ul>
+<h4 id="consumer"><code>Consumer</code><a class="headerlink" href="#consumer" title="Permanent link">&para;</a></h4>
+<p><code>Consumer</code> accepts just one prop:</p>
+<ul>
+<li><code>render(value) -&gt; RoactElement | nil</code>: A function that will be invoked to render any children.<ul>
+<li><code>render</code> will be called every time <code>Consumer</code> is rendered.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="roactsetglobalconfig">Roact.setGlobalConfig<a class="headerlink" href="#roactsetglobalconfig" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Roact.setGlobalConfig(configValues: Dictionary&lt;string, bool&gt;) -&gt; void
+</code></pre></div>
+<p>The entry point for configuring Roact. Roact currently applies this to everything using this instance of Roact, so be careful using this with a project that has multiple consumers of Roact.</p>
+<p>Once config values are set, they will apply from then on. This is primarily useful when developing as it can enable features that validate your code more strictly. Most of the settings here incur a performance cost and should typically be disabled in production environments.</p>
+<p>Call this method once at the root of your project (before mounting any Roact elements):
+<div class="highlight"><pre><span></span><code><span class="n">Roact</span><span class="p">.</span><span class="n">setGlobalConfig</span><span class="p">({</span>
+    <span class="n">typeChecks</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="n">propValidation</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+<span class="p">})</span>
+</code></pre></div></p>
+<p>The following are the valid config keys that can be used, and what they do.</p>
+<h4 id="typechecks">typeChecks<a class="headerlink" href="#typechecks" title="Permanent link">&para;</a></h4>
+<p>Enables type checks for Roact's public interface. This includes some of the following:</p>
+<ul>
+<li>Check that the <code>props</code> and <code>children</code> arguments to <code>Roact.createElement</code> are both tables or nil</li>
+<li>Check that <code>setState</code> is passing <code>self</code> as the first argument (it should be called like <code>self:setState(...)</code>)</li>
+<li>Confirm the <code>Roact.mount</code>'s first argument is a Roact element</li>
+<li>And much more!</li>
+</ul>
+<h4 id="internaltypechecks">internalTypeChecks<a class="headerlink" href="#internaltypechecks" title="Permanent link">&para;</a></h4>
+<p>Enables type checks for internal functionality of Roact. This is typically only useful when debugging Roact itself. It will run similar type checks to those mentioned above, but only the private portion of the API.</p>
+<h4 id="elementtracing">elementTracing<a class="headerlink" href="#elementtracing" title="Permanent link">&para;</a></h4>
+<p>When enabled, Roact will capture a stack trace at the site of each element creation and hold onto it, using it to provide additional details on certain kinds of errors. If you get an error that says "<enable element tracebacks>", try enabling this config value to help with debugging.</p>
+<p>Enabling <code>elementTracing</code> also allows the use of the <a href="#getelementtraceback">getElementTraceback</a> method on Component, which can also be helpful for debugging.</p>
+<h4 id="propvalidation">propValidation<a class="headerlink" href="#propvalidation" title="Permanent link">&para;</a></h4>
+<p>Enables validation of props via the <a href="#validateprops">validateProps</a> method on components. With this flag enabled, any validation written by component authors in a component's <code>validateProps</code> method will be run on every prop change. This is helpful during development for making sure components are being used correctly.</p>
+<hr />
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permanent link">&para;</a></h2>
+<h3 id="roactchildren">Roact.Children<a class="headerlink" href="#roactchildren" title="Permanent link">&para;</a></h3>
+<p>This is the key that Roact uses internally to store the children that are attached to a Roact element.</p>
+<p>If you're writing a new function component or stateful component that renders children like a host component, you can access <code>Roact.Children</code> in your props table.</p>
+<hr />
+<h3 id="roactref">Roact.Ref<a class="headerlink" href="#roactref" title="Permanent link">&para;</a></h3>
+<p>Use <code>Roact.Ref</code> as a key into the props of a host element to receive a handle to the underlying Roblox Instance.</p>
+<p>Assign this key to a ref created with <a href="#roactcreateref">createRef</a>:
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">ExampleComponent</span> <span class="o">=</span> <span class="n">Roact</span><span class="p">.</span><span class="n">Component</span><span class="p">:</span><span class="n">extend</span><span class="p">(</span><span class="s2">&quot;ExampleComponent&quot;</span><span class="p">)</span>
+
+<span class="kr">function</span> <span class="nc">ExampleComponent</span><span class="p">:</span><span class="nf">init</span><span class="p">()</span>
+    <span class="c1">-- Create a ref.</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">ref</span> <span class="o">=</span> <span class="n">Roact</span><span class="p">.</span><span class="n">createRef</span><span class="p">()</span>
+<span class="kr">end</span>
+
+<span class="kr">function</span> <span class="nc">ExampleComponent</span><span class="p">:</span><span class="nf">render</span><span class="p">()</span>
+    <span class="kr">return</span> <span class="n">Roact</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;Frame&quot;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="c1">-- Use the ref to point to this rendered instance.</span>
+        <span class="p">[</span><span class="n">Roact</span><span class="p">.</span><span class="n">Ref</span><span class="p">]</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">ref</span><span class="p">,</span>
+    <span class="p">})</span>
+<span class="kr">end</span>
+
+<span class="kr">function</span> <span class="nc">ExampleComponent</span><span class="p">:</span><span class="nf">didMount</span><span class="p">()</span>
+    <span class="c1">-- Refs are a kind of binding, so we can access the Roblox Instance using getValue.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Roblox Instance&quot;</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">ref</span><span class="p">:</span><span class="n">getValue</span><span class="p">())</span>
+<span class="kr">end</span>
+</code></pre></div></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Ref objects have a deprecated field called <code>current</code> that is always equal to the result of <code>getValue</code>. Assigning to the <code>current</code> field is not allowed. The field will be removed in a future release.</p>
+</div>
+<p>Alternatively, you can assign it to a function instead:
+<div class="highlight"><pre><span></span><code><span class="n">Roact</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;Frame&quot;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="c1">-- The provided function will be called whenever the rendered instance changes.</span>
+    <span class="p">[</span><span class="n">Roact</span><span class="p">.</span><span class="n">Ref</span><span class="p">]</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">rbx</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Roblox Instance&quot;</span><span class="p">,</span> <span class="n">rbx</span><span class="p">)</span>
+    <span class="kr">end</span><span class="p">,</span>
+<span class="p">})</span>
+</code></pre></div></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When <code>Roact.Ref</code> is given a function, Roact does not guarantee when this function will be run relative to the reconciliation of other props. If you try to read a Roblox property that's being set via a Roact prop, you won't know if you're reading it before or after Roact updates that prop!</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When <code>Roact.Ref</code> is given a function, it will be called with <code>nil</code> when the component instance is destroyed!</p>
+</div>
+<p>See <a href="../advanced/bindings-and-refs#refs">the refs guide</a> for more details.</p>
+<hr />
+<h3 id="roactevent">Roact.Event<a class="headerlink" href="#roactevent" title="Permanent link">&para;</a></h3>
+<p>Index into <code>Roact.Event</code> to receive a key that can be used to connect to events when creating host elements:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Roact</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;ImageButton&quot;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">Roact</span><span class="p">.</span><span class="n">Event</span><span class="p">.</span><span class="n">MouseButton1Click</span><span class="p">]</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">rbx</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">rbx</span><span class="p">,</span> <span class="s2">&quot;clicked at position&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="kr">end</span><span class="p">,</span>
+<span class="p">})</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Event callbacks receive the Roblox Instance as the first parameter, followed by any parameters yielded by the event.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When connecting to the <code>Changed</code> event, be careful not to call <code>setState</code> or other functions that will trigger renders. This will cause Roact to re-render during a render, and errors will be thrown!</p>
+</div>
+<p>See <a href="../guide/events">the events guide</a> for more details.</p>
+<hr />
+<h3 id="roactchange">Roact.Change<a class="headerlink" href="#roactchange" title="Permanent link">&para;</a></h3>
+<p>Index into <code>Roact.Change</code> to receive a key that can be used to connect to <a href="http://wiki.roblox.com/index.php?title=API:Class/Instance/GetPropertyChangedSignal"><code>GetPropertyChangedSignal</code></a> events.</p>
+<p>It's similar to <code>Roact.Event</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Roact</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;ScrollingFrame&quot;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">Roact</span><span class="p">.</span><span class="n">Change</span><span class="p">.</span><span class="n">CanvasPosition</span><span class="p">]</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">rbx</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ScrollingFrame scrolled to&quot;</span><span class="p">,</span> <span class="n">rbx</span><span class="p">.</span><span class="n">CanvasPosition</span><span class="p">)</span>
+    <span class="kr">end</span><span class="p">,</span>
+<span class="p">})</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Property changed events are fired by Roact during the reconciliation phase. Be careful not to accidentally trigger a re-render in the middle of a re-render, or an error will be thrown!</p>
+</div>
+<hr />
+<h3 id="roactnone">Roact.None<a class="headerlink" href="#roactnone" title="Permanent link">&para;</a></h3>
+<p><code>Roact.None</code> is a special value that can be used to clear elements from your component state when calling <code>setState</code> or returning from <code>getDerivedStateFromProps</code>.</p>
+<p>In Lua tables, removing a field from state is not possible by setting its value to <code>nil</code> because <code>nil</code> values mean the same thing as no value at all. If a field needs to be removed from state, it can be set to <code>Roact.None</code> when calling <code>setState</code>, which will ensure that the resulting state no longer contains it:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nc">MyComponent</span><span class="p">:</span><span class="nf">didMount</span><span class="p">()</span>
+    <span class="n">self</span><span class="p">:</span><span class="n">setState</span><span class="p">({</span>
+        <span class="n">fieldToRemove</span> <span class="o">=</span> <span class="n">Roact</span><span class="p">.</span><span class="n">None</span>
+    <span class="p">})</span>
+<span class="kr">end</span>
+</code></pre></div>
+<hr />
+<h2 id="component-types">Component Types<a class="headerlink" href="#component-types" title="Permanent link">&para;</a></h2>
+<h3 id="roactcomponent">Roact.Component<a class="headerlink" href="#roactcomponent" title="Permanent link">&para;</a></h3>
+<p>The base component instance that can be extended to make stateful components.</p>
+<p>Call <code>Roact.Component:extend("ComponentName")</code> to make a new stateful component with a given name.</p>
+<hr />
+<h3 id="roactpurecomponent">Roact.PureComponent<a class="headerlink" href="#roactpurecomponent" title="Permanent link">&para;</a></h3>
+<p>An extension of <code>Roact.Component</code> that only re-renders if its props or state change.</p>
+<p><code>PureComponent</code> implements the <code>shouldUpdate</code> lifecycle event with a shallow equality comparison. It's optimized for use with immutable data structures, which makes it a perfect fit for use with frameworks like Rodux.</p>
+<p><code>PureComponent</code> is not <em>always</em> faster, but can often result in significant performance improvements when used correctly.</p>
+<hr />
+<h3 id="roactportal">Roact.Portal<a class="headerlink" href="#roactportal" title="Permanent link">&para;</a></h3>
+<p>A component that represents a <em>portal</em> to a Roblox Instance. Portals are created using <code>Roact.createElement</code>.</p>
+<p>Any children of a portal are put inside the Roblox Instance specified by the required <code>target</code> prop. That Roblox Instance should not be one created by Roact.</p>
+<p>Portals are useful for creating dialogs managed by deeply-nested UI components, and enable Roact to represent and manage multiple disjoint trees at once.</p>
+<p>See <a href="../advanced/portals">the Portals guide</a> for a small tutorial and more details about portals.</p>
+<hr />
+<h2 id="component-api">Component API<a class="headerlink" href="#component-api" title="Permanent link">&para;</a></h2>
+<h3 id="defaultprops">defaultProps<a class="headerlink" href="#defaultprops" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>static defaultProps: Dictionary&lt;any, any&gt;
+</code></pre></div>
+<p>If <code>defaultProps</code> is defined on a stateful component, any props that aren't specified when a component is created will be taken from there.</p>
+<hr />
+<h3 id="init">init<a class="headerlink" href="#init" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>init(initialProps) -&gt; void
+</code></pre></div>
+<p><code>init</code> is called exactly once when a new instance of a component is created. It can be used to set up the initial <code>state</code>, as well as any non-<code>render</code> related values directly on the component.</p>
+<p>Use <code>setState</code> inside of <code>init</code> to set up your initial component state:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nc">MyComponent</span><span class="p">:</span><span class="nf">init</span><span class="p">()</span>
+    <span class="n">self</span><span class="p">:</span><span class="n">setState</span><span class="p">({</span>
+        <span class="n">position</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">velocity</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="p">})</span>
+<span class="kr">end</span>
+</code></pre></div>
+<p>In older versions of Roact, <code>setState</code> was disallowed in <code>init</code>, and you would instead assign to <code>state</code> directly. It's simpler to use <code>setState</code>, but assigning directly to <code>state</code> is still acceptable inside <code>init</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nc">MyComponent</span><span class="p">:</span><span class="nf">init</span><span class="p">()</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">state</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">position</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">velocity</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="p">}</span>
+<span class="kr">end</span>
+</code></pre></div>
+<hr />
+<h3 id="render">render<a class="headerlink" href="#render" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>render() -&gt; Element | nil
+</code></pre></div>
+<p><code>render</code> describes what a component should display at the current instant in time.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Roact assumes that <code>render</code> act likes a pure function: the result of <code>render</code> must depend only on <code>props</code> and <code>state</code>, and it must not have side-effects.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nc">MyComponent</span><span class="p">:</span><span class="nf">render</span><span class="p">()</span>
+    <span class="c1">-- This is okay:</span>
+    <span class="kr">return</span> <span class="n">Roact</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;TextLabel&quot;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="n">Text</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">props</span><span class="p">.</span><span class="n">text</span><span class="p">,</span>
+        <span class="n">Position</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">state</span><span class="p">.</span><span class="n">position</span>
+    <span class="p">})</span>
+
+    <span class="c1">-- Ack! Depending on values outside props/state is not allowed!</span>
+    <span class="kr">return</span> <span class="n">Roact</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;TextLabel&quot;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="n">Text</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">someText</span><span class="p">,</span>
+        <span class="n">Position</span> <span class="o">=</span> <span class="n">getMousePosition</span><span class="p">(),</span>
+    <span class="p">})</span>
+<span class="kr">end</span>
+</code></pre></div>
+<p><code>render</code> must be defined for all components. The default implementation of <code>render</code> throws an error; if your component does not render anything, define a render function that returns <code>nil</code> explicitly. This helps make sure that you don't <em>forget</em> to define <code>render</code>!</p>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nc">MyComponent</span><span class="p">:</span><span class="nf">render</span><span class="p">()</span>
+    <span class="kr">return</span> <span class="kc">nil</span>
+<span class="kr">end</span>
+</code></pre></div>
+<hr />
+<h3 id="setstate">setState<a class="headerlink" href="#setstate" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>setState(stateUpdater | stateChange) -&gt; void
+</code></pre></div>
+<p><code>setState</code> <em>requests</em> an update to the component's state. Roact may schedule this update for a later time or resolve it immediately.</p>
+<p>If a function is passed to <code>setState</code>, that function will be called with the current state and props as arguments:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nc">MyComponent</span><span class="p">:</span><span class="nf">didMount</span><span class="p">()</span>
+    <span class="n">self</span><span class="p">:</span><span class="n">setState</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="n">prevState</span><span class="p">,</span> <span class="n">props</span><span class="p">)</span>
+        <span class="kr">return</span> <span class="p">{</span>
+            <span class="n">counter</span> <span class="o">=</span> <span class="n">prevState</span><span class="p">.</span><span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="p">}</span>
+    <span class="kr">end</span><span class="p">)</span>
+<span class="kr">end</span>
+</code></pre></div>
+<p>If this function returns <code>nil</code>, Roact will not schedule a re-render and no state will be updated.</p>
+<p>If a table is passed to <code>setState</code>, the values in that table will be merged onto the existing state:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nc">MyComponent</span><span class="p">:</span><span class="nf">didMount</span><span class="p">()</span>
+    <span class="n">self</span><span class="p">:</span><span class="n">setState</span><span class="p">({</span>
+        <span class="n">foo</span> <span class="o">=</span> <span class="s2">&quot;bar&quot;</span>
+    <span class="p">})</span>
+<span class="kr">end</span>
+</code></pre></div>
+<p>Setting a field in the state to <code>Roact.None</code> will clear it from the state. This is the only way to remove a field from a component's state!</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code>setState</code> can be called from anywhere <strong>except</strong>:</p>
+<ul>
+<li>Lifecycle hooks: <code>willUnmount</code>, <code>willUpdate</code></li>
+<li>Pure functions: <code>render</code>, <code>shouldUpdate</code></li>
+</ul>
+<p>Calling <code>setState</code> inside of <code>init</code> has special behavior. The result of setState will be used to determine initial state, and no additional updates will be scheduled.</p>
+<p>Roact may support calling <code>setState</code> in currently-disallowed places in the future.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong><code>setState</code> does not always resolve synchronously!</strong> Roact may batch and reschedule state updates in order to reduce the number of total renders.</p>
+<p>When depending on the previous value of state, like when incrementing a counter, use the functional form to guarantee that all state updates occur!</p>
+<p>This behavior will be similar to the future behavior of React 17. See:</p>
+<ul>
+<li><a href="https://github.com/facebook/react/issues/11527#issuecomment-360199710">RFClarification: why is <code>setState</code> asynchronous?</a></li>
+<li><a href="https://stackoverflow.com/a/48610973/802794">Does React keep the order for state updates?</a></li>
+</ul>
+</div>
+<hr />
+<h3 id="shouldupdate">shouldUpdate<a class="headerlink" href="#shouldupdate" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>shouldUpdate(nextProps, nextState) -&gt; bool
+</code></pre></div>
+<p><code>shouldUpdate</code> provides a way to override Roact's rerendering heuristics.</p>
+<p>By default, components are re-rendered any time a parent component updates, or when state is updated via <code>setState</code>.</p>
+<p><code>PureComponent</code> implements <code>shouldUpdate</code> to only trigger a re-render any time the props are different based on shallow equality. In a future Roact update, <em>all</em> components may implement this check by default.</p>
+<hr />
+<h3 id="validateprops">validateProps<a class="headerlink" href="#validateprops" title="Permanent link">&para;</a></h3>
+<div class="admonition success">
+<p class="admonition-title">Added in Roact 1.0.0</p>
+</div>
+<div class="highlight"><pre><span></span><code>static validateProps(props) -&gt; (false, message: string) | true
+</code></pre></div>
+<p><code>validateProps</code> is an optional method that can be implemented for a component. It provides a mechanism for verifying inputs passed into the component.</p>
+<p>Every time props are updated, <code>validateProps</code> will be called with the new props before proceeding to <code>shouldUpdate</code> or <code>init</code>. It should return the same parameters that assert expects: a boolean, true if the props passed validation, false if they did not, plus a message explaining why they failed. If the first return value is true, the second value is ignored.</p>
+<p><strong>For performance reasons, property validation is disabled by default.</strong> To use this feature, enable <code>propValidation</code> via <code>setGlobalConfig</code>:</p>
+<div class="highlight"><pre><span></span><code>Roact.setGlobalConfig({
+    propValidation = true
+})
+</code></pre></div>
+<p>See <a href="#roactsetglobalconfig">setGlobalConfig</a> for more details.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>validateProps</code> is a <em>static</em> lifecycle method. It does not have access to <code>self</code>, and must be a pure function.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Depending on the implementation, <code>validateProps</code> can impact performance. Recommended practice is to enable prop validation during development and leave it off in production environments.</p>
+</div>
+<hr />
+<h3 id="getelementtraceback">getElementTraceback<a class="headerlink" href="#getelementtraceback" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>getElementTraceback() -&gt; string | nil
+</code></pre></div>
+<p><code>getElementTraceback</code> gets the stack trace that the component was created in. This allows you to report error messages accurately.</p>
+<h2 id="lifecycle-methods">Lifecycle Methods<a class="headerlink" href="#lifecycle-methods" title="Permanent link">&para;</a></h2>
+<p>In addition to the base Component API, Roact exposes additional lifecycle methods that stateful components can hook into to be notified of various steps in the rendering process.</p>
+<div align="center">
+    <a href="../images/lifecycle.svg">
+        <img src="../images/lifecycle.svg" alt="Diagram of Roact Lifecycle" />
+    </a>
+</div>
+
+<h3 id="didmount">didMount<a class="headerlink" href="#didmount" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>didMount() -&gt; void
+</code></pre></div>
+<p><code>didMount</code> is fired after the component finishes its initial render. At this point, all associated Roblox Instances have been created, and all components have finished mounting.</p>
+<p><code>didMount</code> is a good place to start initial network communications, attach events to services, or modify the Roblox Instance hierarchy.</p>
+<hr />
+<h3 id="willunmount">willUnmount<a class="headerlink" href="#willunmount" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>willUnmount() -&gt; void
+</code></pre></div>
+<p><code>willUnmount</code> is fired right before Roact begins unmounting a component instance's children.</p>
+<p><code>willUnmount</code> acts like a component's destructor, and is a good place to disconnect any manually-connected events.</p>
+<hr />
+<h3 id="willupdate">willUpdate<a class="headerlink" href="#willupdate" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>willUpdate(nextProps, nextState) -&gt; void
+</code></pre></div>
+<p><code>willUpdate</code> is fired after an update is started but before a component's state and props are updated.</p>
+<hr />
+<h3 id="didupdate">didUpdate<a class="headerlink" href="#didupdate" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>didUpdate(previousProps, previousState) -&gt; void
+</code></pre></div>
+<p><code>didUpdate</code> is fired after at the end of an update. At this point, Roact has updated the properties of any Roblox Instances and the component instance's props and state are up to date.</p>
+<p><code>didUpdate</code> is a good place to send network requests or dispatch Rodux actions, but make sure to compare <code>self.props</code> and <code>self.state</code> with <code>previousProps</code> and <code>previousState</code> to avoid triggering too many updates.</p>
+<hr />
+<h3 id="getderivedstatefromprops">getDerivedStateFromProps<a class="headerlink" href="#getderivedstatefromprops" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>static getDerivedStateFromProps(nextProps, lastState) -&gt; nextStateSlice
+</code></pre></div>
+<p>Used to recalculate any state that depends on being synchronized with <code>props</code>.</p>
+<p>Generally, you should use <code>didUpdate</code> to respond to props changing. If you find yourself copying props values to state as-is, consider using props or memoization instead.</p>
+<p><code>getDerivedStateFromProps</code> should return a table that contains the part of the state that should be updated.</p>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nc">MyComponent</span><span class="p">.</span><span class="nf">getDerivedStateFromProps</span><span class="p">(</span><span class="n">nextProps</span><span class="p">,</span> <span class="n">lastState</span><span class="p">)</span>
+    <span class="kr">return</span> <span class="p">{</span>
+        <span class="n">someValue</span> <span class="o">=</span> <span class="n">nextProps</span><span class="p">.</span><span class="n">someValue</span>
+    <span class="p">}</span>
+<span class="kr">end</span>
+</code></pre></div>
+<p>As with <code>setState</code>, you can set use the constant <code>Roact.None</code> to remove a field from the state.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>getDerivedStateFromProps</code> is a <em>static</em> lifecycle method. It does not have access to <code>self</code>, and must be a pure function.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p><code>getDerivedStateFromProps</code> runs before <code>shouldUpdate</code> and any non-nil return will cause the state table to no longer be shallow-equal. This means that a <code>PureComponent</code> will rerender even if nothing actually changed. Similarly, any component implementing both <code>getDerivedStateFromProps</code> and <code>shouldUpdate</code> needs to do so in a way that takes this in to account.</p>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../performance/reduce-reconciliation/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Reduce Reconcilation
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
