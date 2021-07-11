@@ -29,6 +29,10 @@ local exampleData = {
 		name = "binding",
 		label = "Binding",
 	},
+	{
+		name = "shop-page",
+		label = "Shop Page",
+	},
 }
 
 for _, example in ipairs(exampleData) do
