@@ -13,6 +13,7 @@
 
 ## [1.3.1](https://github.com/Roblox/roact/releases/tag/v1.3.1) (November 19th, 2020)
 * Added component name to property validation error message ([#275](https://github.com/Roblox/roact/pull/275))
+* Fixed an issue where events were called while unmounting a host element ([#282](https://github.com/Roblox/roact/pull/282))
 
 ## [1.3.0](https://github.com/Roblox/roact/releases/tag/v1.3.0) (May 5th, 2020)
 * Added Contexts, which enables easy handling of items that are provided and consumed throughout the tree.

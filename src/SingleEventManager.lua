@@ -144,4 +144,17 @@ function SingleEventManager:resume()
 	self._suspendedEventQueue = {}
 end
 
+function SingleEventManager:disconnectAll()
+	self._status = EventStatus.Disabled
+
+	for eventKey, connection in pairs(self._connections) do
+		connection:Disconnect()
+		self._listeners[eventKey] = nil
+	end
+
+	self._listeners = {}
+	self._connections = {}
+	self._suspendedEventQueue = {}
+end
+
 return SingleEventManager

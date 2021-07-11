@@ -236,4 +236,22 @@ return function()
 			end).to.throw()
 		end)
 	end)
+
+	describe("disconnectAll", function()
+		it("should not invoke events fired during suspension but disconnected before resumption", function()
+			local instance = Instance.new("BindableEvent")
+			local manager = SingleEventManager.new(instance)
+			local eventSpy = createSpy()
+
+			manager:connectEvent("Event", eventSpy.value)
+			manager:suspend()
+
+			instance:Fire(1)
+
+			manager:disconnectAll()
+
+			manager:resume()
+			expect(eventSpy.callCount).to.equal(0)
+		end)
+	end)
 end

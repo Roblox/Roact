@@ -230,6 +230,10 @@ function RobloxRenderer.unmountHostNode(reconciler, virtualNode)
 
 	applyRef(element.props[Ref], nil)
 
+	if virtualNode.eventManager ~= nil then
+		virtualNode.eventManager:disconnectAll()
+	end
+
 	for _, childNode in pairs(virtualNode.children) do
 		reconciler.unmountVirtualNode(childNode)
 	end
